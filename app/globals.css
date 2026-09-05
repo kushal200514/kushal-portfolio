@@ -1,41 +1,89 @@
 @import "tailwindcss";
 
 /* ----------------------------------------------------------------------------
-   Emili Hearth portfolio — design tokens extracted 1:1 from the Framer project.
-   Tailwind v4 only: @theme tokens + @utility type scale. No component CSS.
+   Kushal Portfolio — Design Tokens
+   Tailwind CSS v4
 ---------------------------------------------------------------------------- */
 
+:root {
+  --site-bg: rgb(255 255 255);
+  --site-text: rgb(50 50 50);
+
+  --site-white-1: rgb(255 255 255);
+  --site-white-2: rgb(250 250 250);
+
+  --site-grey-1: rgb(242 242 242);
+  --site-grey-2: rgb(238 238 238);
+  --site-grey-3: rgb(138 138 138);
+}
+
+html.dark {
+  --site-bg: rgb(13 13 13);
+  --site-text: rgb(245 245 245);
+
+  --site-white-1: rgb(24 24 24);
+  --site-white-2: rgb(18 18 18);
+
+  --site-grey-1: rgb(30 30 30);
+  --site-grey-2: rgb(45 45 45);
+  --site-grey-3: rgb(160 160 160);
+}
+
+/* ---------------------------------------------------------------------------
+   Theme
+--------------------------------------------------------------------------- */
+
 @theme {
-  /* Color styles */
-  --color-black-1: rgb(50 50 50);
-  --color-white-1: rgb(255 255 255);
-  --color-white-2: rgb(250 250 250);
-  --color-grey-1: rgb(242 242 242);
-  --color-grey-2: rgb(238 238 238);
-  --color-grey-3: rgb(138 138 138);
+  /* Colors */
+
+  --color-black-1: var(--site-text);
+
+  --color-white-1: var(--site-white-1);
+  --color-white-2: var(--site-white-2);
+
+  --color-grey-1: var(--site-grey-1);
+  --color-grey-2: var(--site-grey-2);
+  --color-grey-3: var(--site-grey-3);
+
   --color-blue-1: rgb(0 157 255);
 
-  --color-background: rgb(255 255 255);
-  --color-foreground: var(--color-black-1);
+  --color-background: var(--site-bg);
+  --color-foreground: var(--site-text);
 
-  /* Fonts (wired in layout.tsx) */
-  --font-display: var(--font-runde), ui-sans-serif, system-ui, sans-serif; /* Open Runde */
-  --font-hand: var(--font-handrawn), ui-serif, cursive; /* Delicious Handrawn */
-  --font-name: var(--font-geist), ui-sans-serif, system-ui, sans-serif; /* big hero name */
-  --font-serif: var(--font-instrument), ui-serif, Georgia, serif; /* Instrument Serif (Emili) */
+  /* Fonts */
+
+  --font-display: var(--font-runde), ui-sans-serif, system-ui, sans-serif;
+
+  --font-hand: var(--font-handrawn), ui-serif, cursive;
+
+  --font-name: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+
+  /* Spacing */
 
   --spacing-page: 1200px;
+
+  /* Animation */
+
   --ease-framer: cubic-bezier(0.44, 0, 0.18, 1);
 
   --animate-marquee: marquee 30s linear infinite;
+
   --animate-marquee-reverse: marquee 30s linear infinite reverse;
+
   --animate-marquee-y: marquee-y 24s linear infinite;
 }
+
+/* ---------------------------------------------------------------------------
+   Marquee Animations
+--------------------------------------------------------------------------- */
 
 @keyframes marquee {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-50%);
   }
@@ -45,99 +93,127 @@
   from {
     transform: translateY(0);
   }
+
   to {
     transform: translateY(-50%);
   }
 }
 
-/* ---- Type scale (Framer TextStyles) --------------------------------------- */
-/* Open Runde · headings 1em / -0.05em */
+/* ---------------------------------------------------------------------------
+   Type Scale
+--------------------------------------------------------------------------- */
+
 @utility text-h1 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(2.5rem, 1.2rem + 5.2vw, 3.75rem); /* → 60px */
+  font-size: clamp(2.5rem, 1.2rem + 5.2vw, 3.75rem);
   line-height: 1;
   letter-spacing: -0.05em;
 }
+
 @utility text-h2 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(1.625rem, 1.1rem + 1.7vw, 2rem); /* → 32px */
+  font-size: clamp(1.625rem, 1.1rem + 1.7vw, 2rem);
   line-height: 1;
   letter-spacing: -0.05em;
 }
+
 @utility text-body-1 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1rem; /* 16 */
+  font-size: 1rem;
   line-height: 1.3;
   letter-spacing: -0.03em;
 }
+
 @utility text-body-2 {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 1.125rem; /* 18 */
+  font-size: 1.125rem;
   line-height: 1.2;
   letter-spacing: -0.03em;
 }
+
 @utility text-body-3 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.25rem; /* 20 */
+  font-size: 1.25rem;
   line-height: 1.2;
   letter-spacing: -0.03em;
 }
+
 @utility text-body-4 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.375rem; /* 22 */
+  font-size: 1.375rem;
   line-height: 1.3;
   letter-spacing: -0.04em;
 }
 
-/* Delicious Handrawn accents */
+/* ---------------------------------------------------------------------------
+   Handwritten Text
+--------------------------------------------------------------------------- */
+
 @utility text-hand-1 {
   font-family: var(--font-hand);
   font-weight: 400;
-  font-size: 1.5rem; /* 24 */
+  font-size: 1.5rem;
   line-height: 0.8;
   letter-spacing: 0.04em;
 }
+
 @utility text-hand-2 {
   font-family: var(--font-hand);
   font-weight: 400;
-  font-size: 1.75rem; /* 28 */
+  font-size: 1.75rem;
   line-height: 0.7;
   letter-spacing: 0.04em;
 }
+
 @utility text-hand-3 {
   font-family: var(--font-hand);
   font-weight: 400;
-  font-size: 1.125rem; /* 18 */
+  font-size: 1.125rem;
   line-height: 0.7;
   text-align: center;
 }
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
 
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    background-color: var(--site-bg);
+    transition: background-color 300ms ease;
   }
+
   body {
-    background-color: var(--color-background);
-    color: var(--color-black-1);
+    background-color: var(--site-bg);
+    color: var(--site-text);
     font-family: var(--font-display);
+
+    transition:
+      background-color 300ms ease,
+      color 300ms ease;
   }
+
   html.lenis,
   html.lenis body {
     height: auto;
   }
+
   .lenis.lenis-smooth {
     scroll-behavior: auto !important;
   }
+
   .lenis.lenis-stopped {
     overflow: clip;
   }
+
   .lenis.lenis-smooth iframe {
     pointer-events: none;
   }
