@@ -120,7 +120,7 @@ export const faqs = {
 export const pricing = {
   tag: "#Resume",
   heading: "My Resume",
-  body: "A piece of PDF cannot decide my career.",
+  body: "This resume is being built on the current skills i learnt and would be updated as i improve.",
   cards: [
     {
       badge: "Kushal's Resume",
@@ -144,7 +144,7 @@ export const pricing = {
 export const contact = {
   tag: "#Contact Me",
   heading: "Get In Touch",
-  body: "We discussed your project in detail, including your goals and requirements.",
+  body: "If u have impressed with my resume ,Please drop a message and also a Feedback regarding my resume.",
   bookingUrl: "mailto:yourgmail@gmail.com",
   formTabs: ["Send a Message", "Mail Me"],
   form: {
